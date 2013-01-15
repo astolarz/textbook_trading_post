@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   validates_uniqueness_of :email
 
+  has_many :buying_trades
+  has_many :selling_trades
+
   def self.authenticate(email, password)
     user = find_by_email(email)
     if user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

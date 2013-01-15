@@ -1,3 +1,3 @@
-class UtexasCourse < ActiveRecord::Base
+class UtexasCourse < Course
   attr_accessible :unique_number
 end
