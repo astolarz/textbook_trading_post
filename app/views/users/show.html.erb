@@ -5,5 +5,23 @@
   <%= @user.email %>
 </p>
 
+<ul>
+  <% @buying_trades.each do |bt| %>
+    <li>
+      <%= bt.price %>
+    </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @selling_trades.each do |st| %>
+    <li>
+      <%= st.price %>
+    </li>
+  <% end %>
+</ul>
+
+<%= render 'add_trade' %>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

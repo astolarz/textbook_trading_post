@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @buying_trades = BuyingTrade.where(:user_id => params[:id])
+    @selling_trades = SellingTrade.where(:user_id => params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
