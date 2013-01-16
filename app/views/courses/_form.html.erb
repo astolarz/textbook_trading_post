@@ -12,16 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :session %><br />
-    <%= f.text_field :session %>
+    <%= f.label :dept_id %><br />
+    <%= f.collection_select :dept_id, Department.all, :id, :abbr, {} %>
+  </div>
+  <div class="field">
+    <%= f.label :course_number %><br />
+    <%= f.text_field :course_number %>
+  </div>
+  <div class="field">
+    <%= f.label :course_title %><br />
+    <%= f.text_field :course_title %>
   </div>
   <div class="field">
     <%= f.label :instructor %><br />
     <%= f.text_field :instructor %>
   </div>
   <div class="field">
-    <%= f.label :course_number %><br />
-    <%= f.text_field :course_number %>
+    <%= f.label :days %><br />
+    <%= f.text_field :days %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :session %><br />
+    <%= f.text_field :session %>
   </div>
   <div class="field">
     <%= f.label :year %><br />

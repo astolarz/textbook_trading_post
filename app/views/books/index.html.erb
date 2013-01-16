@@ -1,28 +1,23 @@
 <h1>Listing books</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Edition</th>
-    <th>Author</th>
-    <th>Isbn</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class="row">
+  <div class="span4">Title</div>
+  <div class="span1">Edition</div>
+  <div class="span3">Author</div>
+  <div class="span2">ISBN</div>
+  <div class="span1"></div>
+  <div class="span1"></div>
+</div>
 <% @books.each do |book| %>
-  <tr>
-    <td><%= book.title %></td>
-    <td><%= book.edition %></td>
-    <td><%= book.author %></td>
-    <td><%= book.isbn %></td>
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div class="row">
+  <div class="span4"><%= link_to book.title, book %></div>
+  <div class="span1"><%= book.edition %></div>
+  <div class="span3"><%= book.author %></div>
+  <div class="span2"><%= book.isbn %></div>
+  <div class="span1"><%= link_to 'Edit', edit_book_path(book) %></div>
+  <div class="span1"><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+</div>
 <% end %>
-</table>
 
 <br />
 

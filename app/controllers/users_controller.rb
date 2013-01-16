@@ -44,12 +44,14 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    render :nothing => true, :status => :forbidden if current_user.id != @user.id
   end
 
   # PUT /users/1
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
+    render :nothing => true, :status => :forbidden if current_user.id != @user.id
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -66,6 +68,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
+    render :nothing => true, :status => :forbidden if current_user.id != @user.id
     @user.destroy
 
     respond_to do |format|
